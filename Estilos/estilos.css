@@ -1,0 +1,64 @@
+#espacio{
+	height: 620px;
+	width: 1003.16px;
+	margin-left: 175px;
+}
+
+#barcos{
+	background: blue;
+	width: 28%;
+	padding: 1%;
+	float: left;
+	height: 600px;
+}
+
+#casillas{
+	background: green;
+	width: 68%;
+	float: left;
+	height: 600px;
+	padding: 1%;
+}
+
+.barco{
+	float: left;
+	margin: 5%;
+	
+
+}
+
+#barco2{
+	width: 50%;
+	background: yellow;
+}
+#barco3{
+	width: 60%;
+	background: red;
+}
+#barco4{
+	width: 70%;
+	background: orange;
+}
+#barco5{
+	width: 80%;
+	background: white;
+}
+
+
+.casilla{
+	background: red;
+	float: left;
+	width: 12.2%;
+	height: 12.2%;
+	border: solid 1px white;
+}
+#txtcasilla{
+	text-align: center;
+	color: white;
+	margin-top: 35%;
+}
+
+#texto{
+	text-align: center;
+	
+}
