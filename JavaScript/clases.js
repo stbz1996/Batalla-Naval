@@ -11,12 +11,10 @@ class barco{
 		this.posiciones = lista;
 	}
 
-	quitarVida(num){
-		for (var i = 0; i < this.tamano; i++) {
-			if (this.posiciones[i] == num) {
-				this.vida = this.vida - 1;
-			}
-		}
+
+	quitarVida(){
+		this.vida = this.vida - 1;
+		return this.vida;		
 	}
 
 	eliminado(){
@@ -24,5 +22,17 @@ class barco{
 			return "el barco fue eliminado";
 		}
 		return "el barco fue eliminado";
+	}
+}
+
+
+
+
+
+
+class coordenada{
+	constructor(idcordenada, pcolor){
+		this.cordenada = idcordenada;
+		this.color = pcolor;
 	}
 }

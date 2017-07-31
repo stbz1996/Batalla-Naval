@@ -27,6 +27,10 @@
 
 }
 
+#barco1{
+	width: 50%;
+	background: yellow;
+}
 #barco2{
 	width: 50%;
 	background: yellow;
@@ -44,13 +48,26 @@
 	background: white;
 }
 
+.boton1{
+	text-align: center;
+	float: left;
+	font-size: 18px;
+	width: 20%;
+	margin-top: 4.5%;
+	margin-left: 10%;
+}
 
 .casilla{
 	background: red;
 	float: left;
-	width: 12.2%;
-	height: 12.2%;
+	width: 11.7%;
+	height: 11.7%;
 	border: solid 1px white;
+}
+.grupoCasillas{
+	width: 100%;
+	padding-top: 2%;
+	padding-left: 2%;
 }
 #txtcasilla{
 	text-align: center;
@@ -61,4 +78,51 @@
 #texto{
 	text-align: center;
 	
+}
+
+#tableroJuego{
+	display: none;
+	background: black;
+	width: 100%;
+}
+
+.tablero{
+	width: 20%;
+	background: red;
+	float: left;
+	height: 620px;
+}
+
+.batallaNaval{
+	width: 77.5%;
+	margin-left: 0.5%;
+	background: green;
+	float: left;
+	height: 620px;
+	padding-left:1%;
+	padding-right:1%;
+}
+
+
+.casilla2{
+	background: red;
+	float: left;
+	width: 12.1%;
+	height: 6%;
+	border: solid 1px white;
+}
+
+.cuadro1{
+	width: 48%;
+	padding: 0.5%;
+	background: white;
+	float: left;
+	border: solid 5px black;
+}
+.info{
+	width: 100%;
+	background: gray;
+	height: 100px;
+	margin-bottom: 1%;
+	text-align: center;;
 }
