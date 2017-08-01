@@ -4,7 +4,7 @@
 
 <head>
   <title>Aqui el titulo putos</title>
-  <script type="text/javascript" src="JavaScript/colocacionBarcos.js"></script>
+  <script type="text/javascript" src="JavaScript/colocacion.js"></script>
   <script type="text/javascript" src="JavaScript/clases.js"></script>
   <script type="text/javascript" src="JavaScript/Batalla.js"></script>
   <LINK REL=StyleSheet HREF="Estilos/estilos.css" TYPE="text/css" MEDIA=screen> 
@@ -12,22 +12,13 @@
 <body>
 	<div id="espacio">
 		<form id="barcos" name="form1">
-		<h2 id="texto">Coloque sus barcos</h2>
-			<button name="b5" id="barco5" class="barco" onclick="seleccionarBarco(5, '#1EB1DD', 5)">
-				Barco 5
-			</button>
-			<button name="b4" id="barco4" class="barco" onclick="seleccionarBarco(4, '#B1DD1E', 4)">
-				Barco 4
-			</button>
-			<button name="b3" id="barco3" class="barco" onclick="seleccionarBarco(3, '#E81ACC', 3)">
-				Barco 3
-			</button>
-			<button name="b2" id="barco2" class="barco" onclick="seleccionarBarco(2, '#E8AA1A', 2)">
-				Barco 2
-			</button>
-			<button name="b1" id="barco1" class="barco" onclick="seleccionarBarco(2, '#7D7769', 1)">
-				Barco 1
-			</button>
+			<h2 id="texto">Instala tus tropas Jugador 1</h2>
+			<br><br>
+			<button name="b5" id="barco5" class="barco" onclick="seleccionarBarco(5, '#1EB1DD', 5)"></button>
+			<button name="b4" id="barco4" class="barco" onclick="seleccionarBarco(4, '#B1DD1E', 4)"></button>
+			<button name="b3" id="barco3" class="barco" onclick="seleccionarBarco(3, '#E81ACC', 3)"></button>
+			<button name="b2" id="barco2" class="barco" onclick="seleccionarBarco(2, '#E8AA1A', 2)"></button>
+			<button name="b1" id="barco1" class="barco" onclick="seleccionarBarco(2, '#7D7769', 1)"></button>
 		</form>
 
 		<div id="casillas">
@@ -96,6 +87,7 @@
 				<div class="casilla" id="c62" onclick="selectEspacio(62)" onmouseover="marcar(62)" onmouseleave="desmarcar(62)"> <p id="txtcasilla"> 62 </p> </div> 
 				<div class="casilla" id="c63" onclick="selectEspacio(63)" onmouseover="marcar(63)" onmouseleave="desmarcar(63)"> <p id="txtcasilla"> 63 </p> </div> 
 				<div class="casilla" id="c64" onclick="selectEspacio(64)" onmouseover="marcar(64)" onmouseleave="desmarcar(64)"> <p id="txtcasilla"> 64 </p> </div> 
+
 			</div>
 			<button class="boton1" onclick="cambiarDireccionMarcado('h')">Horizontal</button>
 			<button class="boton1" onclick="pasarTurno()">Terminar</button>
@@ -104,15 +96,14 @@
 	</div>
 
 	<div id="tableroJuego">
-			<div class="tablero">
-				tab 1
-			</div>
+			
 
 			<div class="batallaNaval">
 				<div class="info">
-					<h1>Batalla Naval</h1>
+					<div id="logoBN"></div>
 					<h3 id="msj"> Es el turno del primero Jugador </h3>
 				</div>
+				<div class="contenedorBatalla">
 				<div class="cuadro1">
 <button class='casilla2' id='m1' value='1' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 1 </p> </button>
 <button class='casilla2' id='m2' value='2' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 2 </p> </button>
@@ -246,7 +237,7 @@
 <button class='casilla2' id='k63' value='63' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 63 </p> </button>
 <button class='casilla2' id='k64' value='64' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 64 </p> </button>
 				</div>
-
+				</div>
 			</div>
 
 	</div>

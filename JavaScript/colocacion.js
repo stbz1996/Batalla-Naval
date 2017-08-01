@@ -9,25 +9,17 @@ var contadorlistaBarcosJugador1 = 0;
 var listaBarcosJugador2 = new Array();
 var contadorlistaBarcosJugador2 = 0;
 ////////////////////////////////////////////////////////////
+var listaBarcos = new Array();
+var espaciosOcupados = new Array();
 var jugadorActual = "jugador1";
 var mapaHabilitado = false;
 var colorBarcoActual;
 var cantidadEspaciosDelBarco = 0;
 var listaPosicionesTemporales;
-var contadorlistaPosicionesTemporales = 0;
-var espaciosOcupados = new Array();
-var contadorespaciosOcupados = 0;
-var listaBarcos = new Array();
-var contadorlistaBarcos = 0;
 var direccionBusqueda = 'h';
 var barcoActual;
+var barcosUsados = [0,0,0,0,0,0];
 
-var barcosUsados = new Array();
-barcosUsados[1] = 0;
-barcosUsados[2] = 0;
-barcosUsados[3] = 0;
-barcosUsados[4] = 0;
-barcosUsados[5] = 0;
 
 					// #####################
 					// ###   funciones   ###
@@ -53,8 +45,6 @@ function marcar(valor){
 		var cant = cantidadEspaciosDelBarco;
 		var contador1 = valor;
 		var lista = new Array();
-		var contadorLista = 0;
-
 		// Verifica la direccion en la que debe marcar
 		if (direccionBusqueda == 'v') {
 			while(contador1 < 57){contador1 = contador1 + 8;}
@@ -70,17 +60,14 @@ function marcar(valor){
 			if ( (valor + (valorControl * i)) <= contador1) {
 				document.getElementById("c"+(valor+ (i*valorControl))).style.background = "black";	
 				cant = cant - 1;
-				lista[contadorLista] = valor + (i*valorControl);
-				contadorLista++;
+				lista[lista.length] = valor + (i*valorControl);
 			}
 		}
 		for(var i = 1; i <= cant; i++) {
 			document.getElementById("c" + (valor-(i*valorControl))).style.background = "black";
-			lista[contadorLista] = valor-(i*valorControl);
-			contadorLista++;
+			lista[lista.length] = valor-(i*valorControl);
 		}	
 		listaPosicionesTemporales = lista;
-		contadorlistaPosicionesTemporales = contadorLista;
 		llenarEspaciosOcupados();
 	}
 }
@@ -97,8 +84,8 @@ function desmarcar(valor){
 function selectEspacio(valor){
 	if (mapaHabilitado) {
 		// verifica que ningun espacio este ya ocupado
-		for (var i = 0; i < contadorespaciosOcupados; i++) {
-			for (var k = 0; k < contadorlistaPosicionesTemporales; k++) {
+		for (var i = 0; i < espaciosOcupados.length; i++) {
+			for (var k = 0; k < listaPosicionesTemporales.length; k++) {
 				if (espaciosOcupados[i] == listaPosicionesTemporales[k]) {
 					alert("No se puede colocar el barco en esta posicion");
 					return true;
@@ -106,11 +93,10 @@ function selectEspacio(valor){
 			}
 		}
 		// Añade las posiciones a la lista de ocupadas
-		anadeEspaciosOcupados(listaPosicionesTemporales, contadorlistaPosicionesTemporales);
+		anadeEspaciosOcupados(listaPosicionesTemporales, listaPosicionesTemporales.length);
 		// Crea el objeto barco y lo agrega a la lista 
 		var pBarco = new barco(cantidadEspaciosDelBarco, colorBarcoActual, listaPosicionesTemporales);
-		listaBarcos[contadorlistaBarcos] = pBarco;
-		contadorlistaBarcos++;
+		listaBarcos[listaBarcos.length] = pBarco;
 		deshabilitaCuadros();
 		llenarEspaciosOcupados();
 		document.getElementById("barco" + barcoActual).style.display = 'none';
@@ -121,7 +107,7 @@ function selectEspacio(valor){
 
 // llena los espacios en el mapa
 function llenarEspaciosOcupados() {
-	for (var i = 0; i < contadorlistaBarcos; i++) {
+	for (var i = 0; i < listaBarcos.length; i++) {
 		for (var k = 0; k < listaBarcos[i].tamano; k++) {
 			document.getElementById("c"+listaBarcos[i].posiciones[k]).style.background = listaBarcos[i].color;
 		}
@@ -130,9 +116,8 @@ function llenarEspaciosOcupados() {
 
 // añade los valores a al lista de espacios utilizados
 function anadeEspaciosOcupados(lista, tamano){
-	for (var i = 0; i < contadorlistaPosicionesTemporales; i++) {
-		espaciosOcupados[contadorespaciosOcupados] = listaPosicionesTemporales[i];
-		contadorespaciosOcupados++;
+	for (var i = 0; i < listaPosicionesTemporales.length; i++) {
+		espaciosOcupados[espaciosOcupados.length] = listaPosicionesTemporales[i];
 	}
 }
 
@@ -176,19 +161,18 @@ function habilitarBotones(){
 	}
 }
 
-
 function pasarTurno(){
 	//alert(jugadorActual + "");
 	if (jugadorActual == "jugador1") {
 		listaBarcosJugador1 = listaBarcos;
-		contadorlistaBarcosJugador1 = contadorlistaBarcos;
 		jugadorActual = "jugador2";
 		limpiarVariables();
 	}
 	else{
 		listaBarcosJugador2 = listaBarcos;	
-		contadorlistaBarcosJugador2 = contadorlistaBarcos;
-		// envia los datos de las posiciones de los barcos a la pantalla siguiente
+		// llena los contadores de barcos 
+		cantidadBarcosJugador1 = listaBarcosJugador1.length;
+		cantidadBarcosJugador2 = listaBarcosJugador2.length;
 		iniciarJuego();
 	}
 }
@@ -202,11 +186,8 @@ function limpiarVariables(){
 	habilitarBotones();
 	var mapaHabilitado = false;
 	var cantidadEspaciosDelBarco = 0;
-	var contadorlistaPosicionesTemporales = 0;
 	espaciosOcupados = new Array();
-	contadorespaciosOcupados = 0;
 	listaBarcos = new Array();
-	contadorlistaBarcos = 0;
 	direccionBusqueda = 'h';
 	deshabilitaCuadros();
 }
