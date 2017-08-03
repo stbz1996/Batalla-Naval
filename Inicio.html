@@ -3,247 +3,71 @@
 <html>
 
 <head>
-  <title>Aqui el titulo putos</title>
-  <script type="text/javascript" src="JavaScript/colocacion.js"></script>
-  <script type="text/javascript" src="JavaScript/clases.js"></script>
-  <script type="text/javascript" src="JavaScript/Batalla.js"></script>
+  <title>Batalla Naval</title>
+  <script type="text/javascript" src="JavaScript/inicio.js"     ></script>
+  <script type="text/javascript" src="JavaScript/colocacion.js" ></script>
+  <script type="text/javascript" src="JavaScript/Batalla.js"    ></script> 
   <LINK REL=StyleSheet HREF="Estilos/estilos.css" TYPE="text/css" MEDIA=screen> 
 </head>
 <body>
+	<!--<audio src="metal.mp3" autoplay="true"></audio>-->
+	<br>
+	<div class="logoAnim" id="logoBN" style="margin-left: 13.5%; width: 18%"> </div>
 	<div id="espacio">
 		<form id="barcos" name="form1">
-			<h2 id="texto">Instala tus tropas Jugador 1</h2>
-			<br><br>
-			<button name="b5" id="barco5" class="barco" onclick="seleccionarBarco(5, '#1EB1DD', 5)"></button>
-			<button name="b4" id="barco4" class="barco" onclick="seleccionarBarco(4, '#B1DD1E', 4)"></button>
-			<button name="b3" id="barco3" class="barco" onclick="seleccionarBarco(3, '#E81ACC', 3)"></button>
-			<button name="b2" id="barco2" class="barco" onclick="seleccionarBarco(2, '#E8AA1A', 2)"></button>
-			<button name="b1" id="barco1" class="barco" onclick="seleccionarBarco(2, '#7D7769', 1)"></button>
+			<h2 id="texto">Instala las tropas Jugador 1</h2>
+			<button name="b5" id="barco5" class="barco" onclick="seleccionarBarco(5, '#2E18D2', 5)"></button>
+			<button name="b4" id="barco4" class="barco" onclick="seleccionarBarco(4, '#F5A9F2', 4)"></button>
+			<button name="b3" id="barco3" class="barco" onclick="seleccionarBarco(3, '#E51D3E', 3)"></button>
+			<button name="b2" id="barco2" class="barco" onclick="seleccionarBarco(2, '#E5E21D', 2)"></button>
+			<button name="b1" id="barco1" class="barco" onclick="seleccionarBarco(2, 'grey   ', 1)"></button>
 		</form>
-
 		<div id="casillas">
-			<div class="grupoCasillas">
-				<div class="casilla" id="c1"  onclick="selectEspacio(1)"  onmouseover="marcar(1)"  onmouseleave="desmarcar(1)">  <p id="txtcasilla"> 1  </p> </div> 
-				<div class="casilla" id="c2"  onclick="selectEspacio(2)"  onmouseover="marcar(2)"  onmouseleave="desmarcar(2)">  <p id="txtcasilla"> 2  </p> </div> 
-				<div class="casilla" id="c3"  onclick="selectEspacio(3)"  onmouseover="marcar(3)"  onmouseleave="desmarcar(3)">  <p id="txtcasilla"> 3  </p> </div> 
-				<div class="casilla" id="c4"  onclick="selectEspacio(4)"  onmouseover="marcar(4)"  onmouseleave="desmarcar(4)">  <p id="txtcasilla"> 4  </p> </div> 
-				<div class="casilla" id="c5"  onclick="selectEspacio(5)"  onmouseover="marcar(5)"  onmouseleave="desmarcar(5)">  <p id="txtcasilla"> 5  </p> </div> 
-				<div class="casilla" id="c6"  onclick="selectEspacio(6)"  onmouseover="marcar(6)"  onmouseleave="desmarcar(6)">  <p id="txtcasilla"> 6  </p> </div> 
-				<div class="casilla" id="c7"  onclick="selectEspacio(7)"  onmouseover="marcar(7)"  onmouseleave="desmarcar(7)">  <p id="txtcasilla"> 7  </p> </div> 
-				<div class="casilla" id="c8"  onclick="selectEspacio(8)"  onmouseover="marcar(8)"  onmouseleave="desmarcar(8)">  <p id="txtcasilla"> 8  </p> </div> 
-				<div class="casilla" id="c9"  onclick="selectEspacio(9)"  onmouseover="marcar(9)"  onmouseleave="desmarcar(9)">  <p id="txtcasilla"> 9  </p> </div> 
-				<div class="casilla" id="c10" onclick="selectEspacio(10)" onmouseover="marcar(10)" onmouseleave="desmarcar(10)"> <p id="txtcasilla"> 10 </p> </div> 
-				<div class="casilla" id="c11" onclick="selectEspacio(11)" onmouseover="marcar(11)" onmouseleave="desmarcar(11)"> <p id="txtcasilla"> 11 </p> </div> 
-				<div class="casilla" id="c12" onclick="selectEspacio(12)" onmouseover="marcar(12)" onmouseleave="desmarcar(12)"> <p id="txtcasilla"> 12 </p> </div> 
-				<div class="casilla" id="c13" onclick="selectEspacio(13)" onmouseover="marcar(13)" onmouseleave="desmarcar(13)"> <p id="txtcasilla"> 13 </p> </div> 
-				<div class="casilla" id="c14" onclick="selectEspacio(14)" onmouseover="marcar(14)" onmouseleave="desmarcar(14)"> <p id="txtcasilla"> 14 </p> </div> 
-				<div class="casilla" id="c15" onclick="selectEspacio(15)" onmouseover="marcar(15)" onmouseleave="desmarcar(15)"> <p id="txtcasilla"> 15 </p> </div> 
-				<div class="casilla" id="c16" onclick="selectEspacio(16)" onmouseover="marcar(16)" onmouseleave="desmarcar(16)"> <p id="txtcasilla"> 16 </p> </div> 
-				<div class="casilla" id="c17" onclick="selectEspacio(17)" onmouseover="marcar(17)" onmouseleave="desmarcar(17)"> <p id="txtcasilla"> 17 </p> </div> 
-				<div class="casilla" id="c18" onclick="selectEspacio(18)" onmouseover="marcar(18)" onmouseleave="desmarcar(18)"> <p id="txtcasilla"> 18 </p> </div> 
-				<div class="casilla" id="c19" onclick="selectEspacio(19)" onmouseover="marcar(19)" onmouseleave="desmarcar(19)"> <p id="txtcasilla"> 19 </p> </div> 
-				<div class="casilla" id="c20" onclick="selectEspacio(20)" onmouseover="marcar(20)" onmouseleave="desmarcar(20)"> <p id="txtcasilla"> 20 </p> </div> 
-				<div class="casilla" id="c21" onclick="selectEspacio(21)" onmouseover="marcar(21)" onmouseleave="desmarcar(21)"> <p id="txtcasilla"> 21 </p> </div> 
-				<div class="casilla" id="c22" onclick="selectEspacio(22)" onmouseover="marcar(22)" onmouseleave="desmarcar(22)"> <p id="txtcasilla"> 22 </p> </div> 
-				<div class="casilla" id="c23" onclick="selectEspacio(23)" onmouseover="marcar(23)" onmouseleave="desmarcar(23)"> <p id="txtcasilla"> 23 </p> </div>
-				<div class="casilla" id="c24" onclick="selectEspacio(24)" onmouseover="marcar(24)" onmouseleave="desmarcar(24)"> <p id="txtcasilla"> 24 </p> </div> 
-				<div class="casilla" id="c25" onclick="selectEspacio(25)" onmouseover="marcar(25)" onmouseleave="desmarcar(25)"> <p id="txtcasilla"> 25 </p> </div>
-				<div class="casilla" id="c26" onclick="selectEspacio(26)" onmouseover="marcar(26)" onmouseleave="desmarcar(26)"> <p id="txtcasilla"> 26 </p> </div> 
-				<div class="casilla" id="c27" onclick="selectEspacio(27)" onmouseover="marcar(27)" onmouseleave="desmarcar(27)"> <p id="txtcasilla"> 27 </p> </div>
-				<div class="casilla" id="c28" onclick="selectEspacio(28)" onmouseover="marcar(28)" onmouseleave="desmarcar(28)"> <p id="txtcasilla"> 28 </p> </div> 
-				<div class="casilla" id="c29" onclick="selectEspacio(29)" onmouseover="marcar(29)" onmouseleave="desmarcar(29)"> <p id="txtcasilla"> 29 </p> </div>
-				<div class="casilla" id="c30" onclick="selectEspacio(30)" onmouseover="marcar(30)" onmouseleave="desmarcar(30)"> <p id="txtcasilla"> 30 </p> </div> 
-				<div class="casilla" id="c31" onclick="selectEspacio(31)" onmouseover="marcar(31)" onmouseleave="desmarcar(31)"> <p id="txtcasilla"> 31 </p> </div>
-				<div class="casilla" id="c32" onclick="selectEspacio(32)" onmouseover="marcar(32)" onmouseleave="desmarcar(32)"> <p id="txtcasilla"> 32 </p> </div> 
-				<div class="casilla" id="c33" onclick="selectEspacio(33)" onmouseover="marcar(33)" onmouseleave="desmarcar(33)"> <p id="txtcasilla"> 33 </p> </div>
-				<div class="casilla" id="c34" onclick="selectEspacio(34)" onmouseover="marcar(34)" onmouseleave="desmarcar(34)"> <p id="txtcasilla"> 34 </p> </div> 
-				<div class="casilla" id="c35" onclick="selectEspacio(35)" onmouseover="marcar(35)" onmouseleave="desmarcar(35)"> <p id="txtcasilla"> 35 </p> </div>
-				<div class="casilla" id="c36" onclick="selectEspacio(36)" onmouseover="marcar(36)" onmouseleave="desmarcar(36)"> <p id="txtcasilla"> 36 </p> </div> 
-				<div class="casilla" id="c37" onclick="selectEspacio(37)" onmouseover="marcar(37)" onmouseleave="desmarcar(37)"> <p id="txtcasilla"> 37 </p> </div>
-				<div class="casilla" id="c38" onclick="selectEspacio(38)" onmouseover="marcar(38)" onmouseleave="desmarcar(38)"> <p id="txtcasilla"> 38 </p> </div> 
-				<div class="casilla" id="c39" onclick="selectEspacio(39)" onmouseover="marcar(39)" onmouseleave="desmarcar(39)"> <p id="txtcasilla"> 39 </p> </div>
-				<div class="casilla" id="c40" onclick="selectEspacio(40)" onmouseover="marcar(40)" onmouseleave="desmarcar(40)"> <p id="txtcasilla"> 40 </p> </div> 
-				<div class="casilla" id="c41" onclick="selectEspacio(41)" onmouseover="marcar(41)" onmouseleave="desmarcar(41)"> <p id="txtcasilla"> 41 </p> </div>
-				<div class="casilla" id="c42" onclick="selectEspacio(42)" onmouseover="marcar(42)" onmouseleave="desmarcar(42)"> <p id="txtcasilla"> 42 </p> </div> 
-				<div class="casilla" id="c43" onclick="selectEspacio(43)" onmouseover="marcar(43)" onmouseleave="desmarcar(43)"> <p id="txtcasilla"> 43 </p> </div>
-				<div class="casilla" id="c44" onclick="selectEspacio(44)" onmouseover="marcar(44)" onmouseleave="desmarcar(44)"> <p id="txtcasilla"> 44 </p> </div> 
-				<div class="casilla" id="c45" onclick="selectEspacio(45)" onmouseover="marcar(45)" onmouseleave="desmarcar(45)"> <p id="txtcasilla"> 45 </p> </div>
-				<div class="casilla" id="c46" onclick="selectEspacio(46)" onmouseover="marcar(46)" onmouseleave="desmarcar(46)"> <p id="txtcasilla"> 46 </p> </div> 
-				<div class="casilla" id="c47" onclick="selectEspacio(47)" onmouseover="marcar(47)" onmouseleave="desmarcar(47)"> <p id="txtcasilla"> 47 </p> </div>
-				<div class="casilla" id="c48" onclick="selectEspacio(48)" onmouseover="marcar(48)" onmouseleave="desmarcar(48)"> <p id="txtcasilla"> 48 </p> </div> 
-				<div class="casilla" id="c49" onclick="selectEspacio(49)" onmouseover="marcar(49)" onmouseleave="desmarcar(49)"> <p id="txtcasilla"> 49 </p> </div>
-				<div class="casilla" id="c50" onclick="selectEspacio(50)" onmouseover="marcar(50)" onmouseleave="desmarcar(50)"> <p id="txtcasilla"> 50 </p> </div> 
-				<div class="casilla" id="c51" onclick="selectEspacio(51)" onmouseover="marcar(51)" onmouseleave="desmarcar(51)"> <p id="txtcasilla"> 51 </p> </div> 
-				<div class="casilla" id="c52" onclick="selectEspacio(52)" onmouseover="marcar(52)" onmouseleave="desmarcar(52)"> <p id="txtcasilla"> 52 </p> </div> 
-				<div class="casilla" id="c53" onclick="selectEspacio(53)" onmouseover="marcar(53)" onmouseleave="desmarcar(53)"> <p id="txtcasilla"> 53 </p> </div> 
-				<div class="casilla" id="c54" onclick="selectEspacio(54)" onmouseover="marcar(54)" onmouseleave="desmarcar(54)"> <p id="txtcasilla"> 54 </p> </div> 
-				<div class="casilla" id="c55" onclick="selectEspacio(55)" onmouseover="marcar(55)" onmouseleave="desmarcar(55)"> <p id="txtcasilla"> 55 </p> </div> 
-				<div class="casilla" id="c56" onclick="selectEspacio(56)" onmouseover="marcar(56)" onmouseleave="desmarcar(56)"> <p id="txtcasilla"> 56 </p> </div> 
-				<div class="casilla" id="c57" onclick="selectEspacio(57)" onmouseover="marcar(57)" onmouseleave="desmarcar(57)"> <p id="txtcasilla"> 57 </p> </div> 
-				<div class="casilla" id="c58" onclick="selectEspacio(58)" onmouseover="marcar(58)" onmouseleave="desmarcar(58)"> <p id="txtcasilla"> 58 </p> </div> 
-				<div class="casilla" id="c59" onclick="selectEspacio(59)" onmouseover="marcar(59)" onmouseleave="desmarcar(59)"> <p id="txtcasilla"> 59 </p> </div> 
-				<div class="casilla" id="c60" onclick="selectEspacio(60)" onmouseover="marcar(60)" onmouseleave="desmarcar(60)"> <p id="txtcasilla"> 60 </p> </div> 
-				<div class="casilla" id="c61" onclick="selectEspacio(61)" onmouseover="marcar(61)" onmouseleave="desmarcar(61)"> <p id="txtcasilla"> 61 </p> </div> 
-				<div class="casilla" id="c62" onclick="selectEspacio(62)" onmouseover="marcar(62)" onmouseleave="desmarcar(62)"> <p id="txtcasilla"> 62 </p> </div> 
-				<div class="casilla" id="c63" onclick="selectEspacio(63)" onmouseover="marcar(63)" onmouseleave="desmarcar(63)"> <p id="txtcasilla"> 63 </p> </div> 
-				<div class="casilla" id="c64" onclick="selectEspacio(64)" onmouseover="marcar(64)" onmouseleave="desmarcar(64)"> <p id="txtcasilla"> 64 </p> </div> 
-
+			<div class="grupoCasillas" id="grupoCasillas222">
+				<script>
+					var txthtml = "";
+					for (var i = 1; i < 65 ; i++) {
+						txthtml += "<div class='casilla' id='c"+i+"' onclick='selectEspacio("+i+")' onmouseover='marcar("+i+")' onmouseleave='desmarcar("+ i +")'> <p id='txtcasilla'>"+i+"</p> </div> ";
+					}
+					document.getElementById("grupoCasillas222").innerHTML = txthtml;
+				</script>
 			</div>
-			<button class="boton1" onclick="cambiarDireccionMarcado('h')">Horizontal</button>
-			<button class="boton1" onclick="pasarTurno()">Terminar</button>
-			<button class="boton1" onclick="cambiarDireccionMarcado('v')">Vertical</button>
+			<button  class="boton1" onclick="cambiarDireccionMarcado('h')"  id="bHorizontal">Horizontal</button>
+			<button  class="boton1" onclick="pasarTurno()"                  id="terminarTurno">Terminar</button>
+			<button  class="boton1" onclick="cambiarDireccionMarcado('v')"  id="bVertical" >Vertical</button>
 		</div>
 	</div>
 
 	<div id="tableroJuego">
-			
-
 			<div class="batallaNaval">
 				<div class="info">
 					<div id="logoBN"></div>
-					<h3 id="msj"> Es el turno del primero Jugador </h3>
+					<h3 id="msj"></h3>
 				</div>
 				<div class="contenedorBatalla">
-				<div class="cuadro1">
-<button class='casilla2' id='m1' value='1' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 1 </p> </button>
-<button class='casilla2' id='m2' value='2' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 2 </p> </button>
-<button class='casilla2' id='m3' value='3' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 3 </p> </button>
-<button class='casilla2' id='m4' value='4' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 4 </p> </button>
-<button class='casilla2' id='m5' value='5' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 5 </p> </button>
-<button class='casilla2' id='m6' value='6' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 6 </p> </button>
-<button class='casilla2' id='m7' value='7' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 7 </p> </button>
-<button class='casilla2' id='m8' value='8' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 8 </p> </button>
-<button class='casilla2' id='m9' value='9' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 9 </p> </button>
-<button class='casilla2' id='m10' value='10' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 10 </p> </button>
-<button class='casilla2' id='m11' value='11' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 11 </p> </button>
-<button class='casilla2' id='m12' value='12' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 12 </p> </button>
-<button class='casilla2' id='m13' value='13' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 13 </p> </button>
-<button class='casilla2' id='m14' value='14' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 14 </p> </button>
-<button class='casilla2' id='m15' value='15' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 15 </p> </button>
-<button class='casilla2' id='m16' value='16' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 16 </p> </button>
-<button class='casilla2' id='m17' value='17' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 17 </p> </button>
-<button class='casilla2' id='m18' value='18' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 18 </p> </button>
-<button class='casilla2' id='m19' value='19' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 19 </p> </button>
-<button class='casilla2' id='m20' value='20' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 20 </p> </button>
-<button class='casilla2' id='m21' value='21' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 21 </p> </button>
-<button class='casilla2' id='m22' value='22' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 22 </p> </button>
-<button class='casilla2' id='m23' value='23' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 23 </p> </button>
-<button class='casilla2' id='m24' value='24' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 24 </p> </button>
-<button class='casilla2' id='m25' value='25' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 25 </p> </button>
-<button class='casilla2' id='m26' value='26' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 26 </p> </button>
-<button class='casilla2' id='m27' value='27' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 27 </p> </button>
-<button class='casilla2' id='m28' value='28' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 28 </p> </button>
-<button class='casilla2' id='m29' value='29' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 29 </p> </button>
-<button class='casilla2' id='m30' value='30' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 30 </p> </button>
-<button class='casilla2' id='m31' value='31' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 31 </p> </button>
-<button class='casilla2' id='m32' value='32' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 32 </p> </button>
-<button class='casilla2' id='m33' value='33' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 33 </p> </button>
-<button class='casilla2' id='m34' value='34' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 34 </p> </button>
-<button class='casilla2' id='m35' value='35' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 35 </p> </button>
-<button class='casilla2' id='m36' value='36' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 36 </p> </button>
-<button class='casilla2' id='m37' value='37' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 37 </p> </button>
-<button class='casilla2' id='m38' value='38' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 38 </p> </button>
-<button class='casilla2' id='m39' value='39' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 39 </p> </button>
-<button class='casilla2' id='m40' value='40' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 40 </p> </button>
-<button class='casilla2' id='m41' value='41' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 41 </p> </button>
-<button class='casilla2' id='m42' value='42' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 42 </p> </button>
-<button class='casilla2' id='m43' value='43' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 43 </p> </button>
-<button class='casilla2' id='m44' value='44' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 44 </p> </button>
-<button class='casilla2' id='m45' value='45' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 45 </p> </button>
-<button class='casilla2' id='m46' value='46' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 46 </p> </button>
-<button class='casilla2' id='m47' value='47' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 47 </p> </button>
-<button class='casilla2' id='m48' value='48' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 48 </p> </button>
-<button class='casilla2' id='m49' value='49' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 49 </p> </button>
-<button class='casilla2' id='m50' value='50' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 50 </p> </button>
-<button class='casilla2' id='m51' value='51' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 51 </p> </button>
-<button class='casilla2' id='m52' value='52' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 52 </p> </button>
-<button class='casilla2' id='m53' value='53' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 53 </p> </button>
-<button class='casilla2' id='m54' value='54' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 54 </p> </button>
-<button class='casilla2' id='m55' value='55' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 55 </p> </button>
-<button class='casilla2' id='m56' value='56' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 56 </p> </button>
-<button class='casilla2' id='m57' value='57' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 57 </p> </button>
-<button class='casilla2' id='m58' value='58' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 58 </p> </button>
-<button class='casilla2' id='m59' value='59' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 59 </p> </button>
-<button class='casilla2' id='m60' value='60' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 60 </p> </button>
-<button class='casilla2' id='m61' value='61' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 61 </p> </button>
-<button class='casilla2' id='m62' value='62' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 62 </p> </button>
-<button class='casilla2' id='m63' value='63' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 63 </p> </button>
-<button class='casilla2' id='m64' value='64' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 64 </p> </button>
+					<div class="cuadro1" id="cuadro1">
+						<script>
+							var txthtml = "";
+							for (var i = 1; i < 65 ; i++) {
+								txthtml += "<button class='casilla2' id='m"+i+"' value='"+i+"' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> " +i+ "</p> </button>";
+							}
+							document.getElementById("cuadro1").innerHTML = txthtml;
+						</script>
+					</div>
+
+					<div class="cuadro1" id="cuadro2">
+						<script>
+							var txthtml = "";
+							for (var i = 1; i < 65 ; i++) {
+								txthtml += "<button class='casilla2' id='k"+i+"' value='"+i+"' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> " +i+ "</p> </button>";
+							}
+							document.getElementById("cuadro2").innerHTML = txthtml;
+						</script>
+					</div>
 				</div>
-			
-				<div class="cuadro1">
-<button class='casilla2' id='k1' value='1' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 1 </p> </button>
-<button class='casilla2' id='k2' value='2' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 2 </p> </button>
-<button class='casilla2' id='k3' value='3' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 3 </p> </button>
-<button class='casilla2' id='k4' value='4' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 4 </p> </button>
-<button class='casilla2' id='k5' value='5' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 5 </p> </button>
-<button class='casilla2' id='k6' value='6' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 6 </p> </button>
-<button class='casilla2' id='k7' value='7' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 7 </p> </button>
-<button class='casilla2' id='k8' value='8' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 8 </p> </button>
-<button class='casilla2' id='k9' value='9' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 9 </p> </button>
-<button class='casilla2' id='k10' value='10' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 10 </p> </button>
-<button class='casilla2' id='k11' value='11' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 11 </p> </button>
-<button class='casilla2' id='k12' value='12' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 12 </p> </button>
-<button class='casilla2' id='k13' value='13' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 13 </p> </button>
-<button class='casilla2' id='k14' value='14' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 14 </p> </button>
-<button class='casilla2' id='k15' value='15' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 15 </p> </button>
-<button class='casilla2' id='k16' value='16' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 16 </p> </button>
-<button class='casilla2' id='k17' value='17' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 17 </p> </button>
-<button class='casilla2' id='k18' value='18' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 18 </p> </button>
-<button class='casilla2' id='k19' value='19' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 19 </p> </button>
-<button class='casilla2' id='k20' value='20' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 20 </p> </button>
-<button class='casilla2' id='k21' value='21' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 21 </p> </button>
-<button class='casilla2' id='k22' value='22' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 22 </p> </button>
-<button class='casilla2' id='k23' value='23' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 23 </p> </button>
-<button class='casilla2' id='k24' value='24' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 24 </p> </button>
-<button class='casilla2' id='k25' value='25' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 25 </p> </button>
-<button class='casilla2' id='k26' value='26' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 26 </p> </button>
-<button class='casilla2' id='k27' value='27' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 27 </p> </button>
-<button class='casilla2' id='k28' value='28' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 28 </p> </button>
-<button class='casilla2' id='k29' value='29' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 29 </p> </button>
-<button class='casilla2' id='k30' value='30' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 30 </p> </button>
-<button class='casilla2' id='k31' value='31' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 31 </p> </button>
-<button class='casilla2' id='k32' value='32' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 32 </p> </button>
-<button class='casilla2' id='k33' value='33' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 33 </p> </button>
-<button class='casilla2' id='k34' value='34' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 34 </p> </button>
-<button class='casilla2' id='k35' value='35' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 35 </p> </button>
-<button class='casilla2' id='k36' value='36' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 36 </p> </button>
-<button class='casilla2' id='k37' value='37' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 37 </p> </button>
-<button class='casilla2' id='k38' value='38' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 38 </p> </button>
-<button class='casilla2' id='k39' value='39' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 39 </p> </button>
-<button class='casilla2' id='k40' value='40' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 40 </p> </button>
-<button class='casilla2' id='k41' value='41' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 41 </p> </button>
-<button class='casilla2' id='k42' value='42' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 42 </p> </button>
-<button class='casilla2' id='k43' value='43' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 43 </p> </button>
-<button class='casilla2' id='k44' value='44' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 44 </p> </button>
-<button class='casilla2' id='k45' value='45' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 45 </p> </button>
-<button class='casilla2' id='k46' value='46' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 46 </p> </button>
-<button class='casilla2' id='k47' value='47' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 47 </p> </button>
-<button class='casilla2' id='k48' value='48' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 48 </p> </button>
-<button class='casilla2' id='k49' value='49' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 49 </p> </button>
-<button class='casilla2' id='k50' value='50' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 50 </p> </button>
-<button class='casilla2' id='k51' value='51' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 51 </p> </button>
-<button class='casilla2' id='k52' value='52' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 52 </p> </button>
-<button class='casilla2' id='k53' value='53' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 53 </p> </button>
-<button class='casilla2' id='k54' value='54' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 54 </p> </button>
-<button class='casilla2' id='k55' value='55' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 55 </p> </button>
-<button class='casilla2' id='k56' value='56' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 56 </p> </button>
-<button class='casilla2' id='k57' value='57' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 57 </p> </button>
-<button class='casilla2' id='k58' value='58' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 58 </p> </button>
-<button class='casilla2' id='k59' value='59' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 59 </p> </button>
-<button class='casilla2' id='k60' value='60' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 60 </p> </button>
-<button class='casilla2' id='k61' value='61' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 61 </p> </button>
-<button class='casilla2' id='k62' value='62' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 62 </p> </button>
-<button class='casilla2' id='k63' value='63' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 63 </p> </button>
-<button class='casilla2' id='k64' value='64' onclick='casillaSeleccionada(this)' onmouseover='cambiarColorCasilla(this)' onmouseleave='reestablecerColorCasilla(this)'> <p id='txtcasilla'> 64 </p> </button>
-				</div>
-				</div>
+				<h3 id="indicadores">Jugador 1</h3>
+				<h3 id="indicadores">Jugador 2</h3>
 			</div>
-
 	</div>
-
-
-
 </body> 
-
 </html>

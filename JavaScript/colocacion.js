@@ -20,7 +20,6 @@ var direccionBusqueda = 'h';
 var barcoActual;
 var barcosUsados = [0,0,0,0,0,0];
 
-
 					// #####################
 					// ###   funciones   ###
 					// #####################
@@ -30,6 +29,7 @@ function cambiarDireccionMarcado(valor){direccionBusqueda = valor;}
 
 // permite seleccionar un barco
 function seleccionarBarco(valor, pColor, boton) {
+
 	habilitarBotones();
 	deshabilitaBotones(boton); 
 	cantidadEspaciosDelBarco = valor;
@@ -71,7 +71,6 @@ function marcar(valor){
 		llenarEspaciosOcupados();
 	}
 }
-
 // Ejecta cuando el mouse sale de un cuadro, limpia los cuadros
 function desmarcar(valor){
 	if (mapaHabilitado) {
@@ -87,7 +86,6 @@ function selectEspacio(valor){
 		for (var i = 0; i < espaciosOcupados.length; i++) {
 			for (var k = 0; k < listaPosicionesTemporales.length; k++) {
 				if (espaciosOcupados[i] == listaPosicionesTemporales[k]) {
-					alert("No se puede colocar el barco en esta posicion");
 					return true;
 				}
 			}
@@ -102,6 +100,10 @@ function selectEspacio(valor){
 		document.getElementById("barco" + barcoActual).style.display = 'none';
 		barcosUsados[barcoActual] = 1;
 		habilitarBotones();
+		if (listaBarcos.length == 5) {
+			// habilita el boton de salir 
+			habilotarBotoneraOpciones(1, 0, 0);
+		}
 	}
 }
 
@@ -163,17 +165,21 @@ function habilitarBotones(){
 
 function pasarTurno(){
 	//alert(jugadorActual + "");
-	if (jugadorActual == "jugador1") {
-		listaBarcosJugador1 = listaBarcos;
-		jugadorActual = "jugador2";
-		limpiarVariables();
-	}
-	else{
-		listaBarcosJugador2 = listaBarcos;	
-		// llena los contadores de barcos 
-		cantidadBarcosJugador1 = listaBarcosJugador1.length;
-		cantidadBarcosJugador2 = listaBarcosJugador2.length;
-		iniciarJuego();
+	if (listaBarcos.length == 1) {
+		if (jugadorActual == "jugador1") {
+			listaBarcosJugador1 = listaBarcos;
+			jugadorActual = "jugador2";
+			limpiarVariables();
+			document.getElementById("texto").innerHTML = "Instala las tropas Jugador 2";
+		}
+		else{
+			listaBarcosJugador2 = listaBarcos;	
+			// llena los contadores de barcos 
+			cantidadBarcosJugador1 = listaBarcosJugador1.length;
+			cantidadBarcosJugador2 = listaBarcosJugador2.length;
+			iniciarJuego();
+		}
+		habilotarBotoneraOpciones(0, 1, 1);
 	}
 }
 
@@ -195,7 +201,14 @@ function limpiarVariables(){
 // esta funcion envia al inicio del juego. las funcionalidades se encuentran en
 // el archivo "juego.js"
 function iniciarJuego(){
+	document.getElementById("logoBN").style.display = 'none';
 	document.getElementById("espacio").style.display = 'none';
 	document.getElementById("tableroJuego").style.display = 'block';
 	cargaJuego();
+}
+
+function habilotarBotoneraOpciones(x,y,z){
+	document.getElementById("terminarTurno").style.opacity = x;
+	document.getElementById("bHorizontal").style.opacity = y;
+	document.getElementById("bVertical").style.opacity = z;
 }

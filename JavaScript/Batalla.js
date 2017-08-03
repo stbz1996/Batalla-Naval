@@ -13,14 +13,20 @@ var listaEspacionMarcados = new Array();
 var listaPosicionesDestruidas = new Array();
 var cantidadBarcosJugador1;
 var cantidadBarcosJugador2;
-
+var juegoActivo = true;
 								// #####################
 								// ###   funciones   ###
 								// #####################
 
 // termina cuando hay un ganador
 function cerrarJuego(msj){
-	document.getElementById("msj").innerHTML = "El GANADOR es el " + msj;
+	document.getElementById("msj").innerHTML = "<h3 id='msj2' class='izqDer'> El GANADOR es el " + msj + "</h3>";
+	for (var i = 1; i <= 64; i++) {document.getElementById("k" + i).style.background = "yellow";}
+	for (var i = 1; i <= 64; i++) {document.getElementById("m" + i).style.background = "yellow";}
+	jugadorActualBatalla = "";
+	juegoActivo = false;
+	llenarEspaciosGolpeados();
+	document.getElementById("xxx").style.display = "block";
 }
 
 // se encarga de iniciar los componentes del juego
@@ -83,62 +89,76 @@ function marcarBarcosDestruidos(){
 	}
 }
 
+// verifica si el espacio tocado ya fue tocado antes
+function verSiEstaDestruido(idParametro){
+	listaEspacionMarcados
+	for (var i = 0; i < listaEspacionMarcados.length; i++) {
+		if (listaEspacionMarcados[i].cordenada == idParametro) {
+			return false;
+		}
+	}
+	return true;
+}
+
 // busca si el disparo es correcto
 function casillaSeleccionada(valor){	
 	// si el jugador 1 toca una casilla valida del jugador 2
-	if ((jugadorActualBatalla == "Jugador 1") && (valor.id[0] == "k")) {
-		for (var i = 0; i < listaBarcosJugador2.length; i++) {
-			for (var k = 0; k < listaBarcosJugador2[i].tamano; k++) {
-				var cord = "k" + listaBarcosJugador2[i].posiciones[k];
-				var pcolor = listaBarcosJugador2[i].color;
-				if (cord == valor.id) {
-					// se añade la posicion a la lista de lugares ya colpeados
-					listaEspacionMarcados[listaEspacionMarcados.length] = new coordenada(cord, pcolor);
-					llenarEspaciosGolpeados();
-					// obtiene las vidas del barco golpeado
-					var vidas = listaBarcosJugador2[i].quitarVida();
-					if (vidas == 0) {
-						cantidadBarcosJugador2--;
-						for (var r = 0; r < listaBarcosJugador2[i].tamano; r++) {
-							listaPosicionesDestruidas[listaPosicionesDestruidas.length] = "k" + listaBarcosJugador2[i].posiciones[r];
+	if (juegoActivo) {
+		if ((jugadorActualBatalla == "Jugador 1") && (valor.id[0] == "k") && (verSiEstaDestruido(valor.id))) {
+			for (var i = 0; i < listaBarcosJugador2.length; i++) {
+				for (var k = 0; k < listaBarcosJugador2[i].tamano; k++) {
+					var cord = "k" + listaBarcosJugador2[i].posiciones[k];
+					var pcolor = listaBarcosJugador2[i].color;
+					if (cord == valor.id) {
+						// se añade la posicion a la lista de lugares ya colpeados
+						listaEspacionMarcados[listaEspacionMarcados.length] = new coordenada(cord, pcolor);
+						llenarEspaciosGolpeados();
+						// obtiene las vidas del barco golpeado
+						var vidas = listaBarcosJugador2[i].quitarVida();
+						if (vidas == 0) {
+							cantidadBarcosJugador2--;
+							for (var r = 0; r < listaBarcosJugador2[i].tamano; r++) {
+								listaPosicionesDestruidas[listaPosicionesDestruidas.length] = "k" + listaBarcosJugador2[i].posiciones[r];
+							}
+							if (cantidadBarcosJugador2 == 0) {cerrarJuego("Jugador 1");}
 						}
-						if (cantidadBarcosJugador2 == 0) {cerrarJuego("Jugador 1");}
+						return true;
 					}
-					return true;
 				}
 			}
+			listaEspacionMarcados[listaEspacionMarcados.length] = new coordenada(valor.id, "black");
+			jugadorActualBatalla = "Jugador 2";
+			
 		}
-		listaEspacionMarcados[listaEspacionMarcados.length] = new coordenada(valor.id, "black");
-		jugadorActualBatalla = "Jugador 2";
-		
-	}
-	// si el jugador 2 toca una casilla valida del jugador 2
-	if ((jugadorActualBatalla == "Jugador 2") && (valor.id[0] == "m")) {
-		for (var i = 0; i < listaBarcosJugador1.length; i++) {
-			for (var k = 0; k < listaBarcosJugador1[i].tamano; k++) {
-				var cord = "m" + listaBarcosJugador1[i].posiciones[k];
-				var pcolor = listaBarcosJugador1[i].color;
-				if (cord == valor.id) {
-					// se añade la posicion a la lista de lugares ya colpeados
-					listaEspacionMarcados[listaEspacionMarcados.length] = new coordenada(cord, pcolor);
-					llenarEspaciosGolpeados();
-					var vidas = listaBarcosJugador1[i].quitarVida();
-					if (vidas == 0) {
-						cantidadBarcosJugador1--;
-						for (var r = 0; r < listaBarcosJugador1[i].tamano; r++) {
-							listaPosicionesDestruidas[listaPosicionesDestruidas.length] = "m"+listaBarcosJugador1[i].posiciones[r];
+		// si el jugador 2 toca una casilla valida del jugador 2
+		if ((jugadorActualBatalla == "Jugador 2") && (valor.id[0] == "m") && (verSiEstaDestruido(valor.id))) {
+			for (var i = 0; i < listaBarcosJugador1.length; i++) {
+				for (var k = 0; k < listaBarcosJugador1[i].tamano; k++) {
+					var cord = "m" + listaBarcosJugador1[i].posiciones[k];
+					var pcolor = listaBarcosJugador1[i].color;
+					if (cord == valor.id) {
+						// se añade la posicion a la lista de lugares ya colpeados
+						listaEspacionMarcados[listaEspacionMarcados.length] = new coordenada(cord, pcolor);
+						llenarEspaciosGolpeados();
+						var vidas = listaBarcosJugador1[i].quitarVida();
+						if (vidas == 0) {
+							cantidadBarcosJugador1--;
+							for (var r = 0; r < listaBarcosJugador1[i].tamano; r++) {
+								listaPosicionesDestruidas[listaPosicionesDestruidas.length] = "m"+listaBarcosJugador1[i].posiciones[r];
+							}
+							if (cantidadBarcosJugador1 == 0) {cerrarJuego("Jugador 2");}
 						}
-						if (cantidadBarcosJugador1 == 0) {cerrarJuego("Jugador 2");}
+						return true;
 					}
-					return true;
 				}
 			}
+			listaEspacionMarcados[listaEspacionMarcados.length] = new coordenada(valor.id, "black");
+			jugadorActualBatalla = "Jugador 1";
 		}
-		listaEspacionMarcados[listaEspacionMarcados.length] = new coordenada(valor.id, "black");
-		jugadorActualBatalla = "Jugador 1";
+	
+		cargaJuego();
+		llenarEspaciosGolpeados();
 	}
-	cargaJuego();
-	llenarEspaciosGolpeados();
 }
 
 
