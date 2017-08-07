@@ -165,7 +165,7 @@ function habilitarBotones(){
 
 function pasarTurno(){
 	//alert(jugadorActual + "");
-	if (listaBarcos.length == 1) {
+	if (listaBarcos.length == 5) {
 		if (jugadorActual == "jugador1") {
 			listaBarcosJugador1 = listaBarcos;
 			jugadorActual = "jugador2";

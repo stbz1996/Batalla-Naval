@@ -182,10 +182,18 @@ body{
 	display: block;
 	opacity: 0;
 }
+#msj3{
 
+	background-image: url("../imagenes/ganador2.png");
+
+}
 #msj2{
+	background-image: url("../imagenes/ganador1.png");
+}
+
+.izqDer{
 	margin-top: -10px;
-	background: green;
+	background: grey;
 	width: 600px;
 	height: 300px;
 	position: relative;
@@ -193,13 +201,6 @@ body{
     border: solid 10px black; 
     box-shadow: 0px 0px 150px;
     border-radius: 200px;
-}
-
-
-.izqDer{
-	background: red;
-	height: 100px;
-	width: 100px;
 	-webkit-animation:izqDer 4s alternate infinite;
 }
 
@@ -221,7 +222,4 @@ body{
    to	{ -webkit-transform: translate3d( 585px, 0px, 0px ); }
    from{ -webkit-transform: translate3d(  585px, 0px, 0px ); }
    to	{ -webkit-transform: translate3d(-140px, 0px, 0px ); }
-   
-   /*from{ -webkit-transform: scale(1.5); }
-   to	{ -webkit-transform: scale(2.5); }*/
 }

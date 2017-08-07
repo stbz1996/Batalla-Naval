@@ -20,7 +20,8 @@ var juegoActivo = true;
 
 // termina cuando hay un ganador
 function cerrarJuego(msj){
-	document.getElementById("msj").innerHTML = "<h3 id='msj2' class='izqDer'> El GANADOR es el " + msj + "</h3>";
+	if (msj == "Jugador 1") {document.getElementById("msj").innerHTML = "<h3 id='msj2' class='izqDer'></h3>";		}
+	else{document.getElementById("msj").innerHTML = "<h3 id='msj3' class='izqDer'></h3>";	}
 	for (var i = 1; i <= 64; i++) {document.getElementById("k" + i).style.background = "yellow";}
 	for (var i = 1; i <= 64; i++) {document.getElementById("m" + i).style.background = "yellow";}
 	jugadorActualBatalla = "";
